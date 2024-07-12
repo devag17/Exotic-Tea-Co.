@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        hr {
+            border: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .menu-item img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .button, .delete {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button i, .delete i {
+            margin-right: 5px;
+        }
+
+        .button:hover, .delete:hover {
+            background-color: #0056b3;
+        }
+
+        .phpbutton {
+            background-color: green;
+            border-radius: 5%;
+            border: 5px;
+            margin-left: 80%;
+            padding: 10px 10px;
+            margin-bottom: 50px;
+
+        }
+
+        .card {
+            display: grid;
+            position: relative;
+            grid-template-rows: auto 1fr;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin: 10px 20px;
+        }
+    
+        .card img {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            border-radius: 15px 15px 0 0;
+        }
+        
+        .details {
+            padding: 20px 10px;
+            display: grid;
+            grid-template-rows: auto 1fr 50px;
+            grid-row-gap: 15px;
+        }
+        .details-sub {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        .details-sub h5 {
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .price {
+            text-align: right;
+        }
+        .details p {
+            color: #6f6f6f;
+            font-size: 15px;
+            line-height: 25px;
+            align-self: stretch;
+        }
+        .details button {
+            /* background-color: #cb202d; */
+            border: none;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 7px;
+            width: 180px;
+        }
+
+        #menu {
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-gap: 20px 40px;
+            background: rgb(245, 242, 242);
+            min-height: 100vh;
+            /* margin-bottom: 20px; */
+        }
+
+
+
+    </style>
+    
+
+
+
+</head>
+<body>
+
+    <h1>USER: </h1><h1 id="name">...</h1>
+    <hr>
+    <h2 align="center">- MENU -</h2>
+    <hr>
+
+    <br><br>    
+
+
+    <div id="menu">
+
+        <div class="card">
+            <img
+                src="https://images.unsplash.com/photo-1626074353765-517a681e40be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Chicken Tikka</h5>
+                    <h5 class="price"> $10 </h5>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit reiciendis nam non quia! Earum eveniet
+                    minus. Facilis explicabo natus nihil voluptatem eveniet pariatur.</p>
+                    <button class="button" onclick="addtocart(0)">
+                        <i class="fas fa-plus"></i> Add
+                    </button>
+                    <button class="delete" onclick="deletefromcart(0)">
+                        <i class="fas fa-minus"></i> Delete
+                    </button>
+            </div>
+            <h3 id="naam" class="menu-item">quantity: </h3>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1593179241557-bce1eb92e47e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                alt="">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Chole Kulche</h5>
+                    <h5 class="price"> $10 </h5>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing
+                    elit.</p>
+                    <button class="button" onclick="addtocart(1)">
+                        <i class="fas fa-plus"></i> Add
+                    </button>
+                    <button class="delete" onclick="deletefromcart(1)">
+                        <i class="fas fa-minus"></i> Delete
+                    </button>
+            </div>
+            <h3 id="naam1">quantity: </h3>
+            
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1921&q=80"
+                alt="">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Pav Bhaji</h5>
+                    <h5 class="price"> $8 </h5>
+                </div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus quibusdam facilis, magni
+                    consectetur necessitatibus.</p>
+                    <button class="button" onclick="addtocart(2)">
+                        <i class="fas fa-plus"></i> Add
+                    </button>
+                    <button class="delete" onclick="deletefromcart(2)">
+                        <i class="fas fa-minus"></i> Delete
+                    </button>
+            </div>
+            <h3 id="naam2" class="menu-item">quantity: </h3>
+        </div>
+
+    </div>
+
+    <br><br>
+    <button class="phpbutton" onclick="send()"> Process Data to PHP </button>
+
+    
+    <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+        var username = urlParams.get('username');
+        document.getElementById('name').innerHTML = username;
+
+        let cartcnt = [
+            {user: username, b_quantity: 0, p_quantity: 0, ms_quantity: 0}
+        ];
+        
+
+        function sendDataToServer(data) {
+
+            // Convert the JavaScript array to a JSON string
+            const jsonData = JSON.stringify(data);
+
+            fetch('process_data.php', {
+                method: 'POST',
+                body: jsonData,
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                },
+            })
+            .then(response => {
+                if (response.ok) {
+                // Request was successful, handle the response if needed
+                    return response.text();
+                } else {
+                // Handle errors
+                throw new Error('Network response was not ok');
+                }
+            })
+            .then(responseData => {
+                // Handle the response from the server (if any)
+                console.log('Server response:', responseData);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        }
+
+        function send() {            
+            sendDataToServer(cartcnt);
+            document.write("data successfully sent into usercart table");
+        }
+
+        function updatecart(index) {
+            
+            
+            switch(index) {
+                
+                case 0: 
+                    document.getElementById("naam").innerHTML = `burger-$60:  ${cartcnt[0].b_quantity}`;
+                    //document.getElementById("jagah").innerHTML = cartcnt[index];
+                break;
+
+                case 1: 
+                    document.getElementById("naam1").innerHTML = `pizza-$120: ${cartcnt[0].p_quantity}`;
+                    //document.getElementById("jagah1").innerHTML = cartcnt[index];  
+                break;
+
+                case 2: 
+                    document.getElementById("naam2").innerHTML = `milkshake-$80: ${cartcnt[0].ms_quantity}`;
+                    // document.getElementById("jagah2").innerHTML = cartcnt[index];
+                break;
+
+            }
+                
+        }
+
+
+        function addtocart(index) {
+            
+            switch(index) {
+                case 0: 
+                    cartcnt[0].b_quantity ++;
+                break;
+
+                case 1: 
+                    cartcnt[0].p_quantity ++;
+                break;
+
+                case 2: 
+                    cartcnt[0].ms_quantity ++;
+                break;  
+            }
+            
+            updatecart(index);
+        }
+
+        function deletefromcart(index) {
+
+                    
+            switch(index) {
+                
+                case 0: 
+                if(cartcnt[0].b_quantity > 0)  {
+                    cartcnt[0].b_quantity --;
+                }
+                break;
+
+                case 1:
+                if(cartcnt[0].p_quantity > 0)  {
+                    cartcnt[0].p_quantity--;
+                }
+                break;
+
+                case 2: 
+                    if(cartcnt[0].ms_quantity > 0) {
+                        cartcnt[0].ms_quantity--;
+                    }
+                break;
+                    
+            }
+
+            updatecart(index);
+
+        }
+
+        
+
+    </script>
+
+
+
+</body>
+
+</html>

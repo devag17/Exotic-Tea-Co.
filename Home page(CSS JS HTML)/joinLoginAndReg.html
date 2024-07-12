@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #3498db, #8e44ad);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #loginForm, #registrationForm {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 20px;
+            width: 300px;
+            display: inline-block;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="password"],input[type="email"],input[type="textfield"],input[type="number"]{
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-bottom: 2px solid #3498db;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+        }
+    </style>
+    
+
+</head>
+<body>
+
+
+    <div id="loginForm">
+        <h2>Login</h2>
+        <form action="loginpage.php" method="POST">
+            <input type="text" placeholder="EnterLOGINusername" name="luser"><br><br>
+            <input type="password" placeholder="EnterLOGINpassword" name="lpass"><br><br>
+            <input type="submit" value="Login" name="login">
+        </form>
+        <p>Don't have an account? <a href="#" onclick="showRegistrationForm()">Register</a></p>
+    </div>
+
+    <div id="registrationForm" style="display: none;">
+        <h2>Registration</h2>
+        <form action="registrationpage.php" method="POST">
+            <input type="text" placeholder="Enter username" name="idname"><br><br>
+            <input type="password" placeholder="Enter password" name="passname"><br><br>
+            <input type="email" placeholder="Enter email" name="email">
+            <input type="number" placeholder="Enter phone" name="phone">
+            <input type="textfield" placeholder="Enter address" name="address">
+            <input type="submit" value="Register" name="submitbutton">
+        </form>
+        <p>Already have an account? <a href="#" onclick="showLoginForm()">Login</a></p>
+    </div>
+
+    <script>
+        function showRegistrationForm() {
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("registrationForm").style.display = "block";
+        }
+
+        function showLoginForm() {
+            document.getElementById("loginForm").style.display = "block";
+            document.getElementById("registrationForm").style.display = "none";
+        }
+    </script>
+</body>
+</html>
