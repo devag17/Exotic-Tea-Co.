@@ -5,3 +5,5 @@ You only need to have the following installed:
 ~PHP
 ~XAMPP server( with Apache and SQL Working and connected in it).
 ![29bbb68510c3a87b29ba2b0b33668e92c6279ad3](https://github.com/user-attachments/assets/9417c8c5-1de5-4167-a0c9-413e63c2950b)
+![070fe012f544f2d488a5b67647e7c41d035bf4d8](https://github.com/user-attachments/assets/c115fc2b-bccb-4fd9-aaa3-f464fea1ded6)
+
